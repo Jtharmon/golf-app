@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Player Profile</title>
+</head>
+<body>
+    <div class="background">
+        <h1>Player Profile</h1>
+        <button id="backButton">Back</button> <!-- Add the back button here -->
+        <div class="profile">
+            <div class="profile-info">
+                <div class="profile-picture">
+                    <img src="img/profile-img.jpg" alt="Profile Picture">
+                </div>
+                <div class="player-name">
+                    <h2>Jon Harmon</h2>
+                </div>
+            </div>
+            <div class="courses-played">
+                <h3>Courses Played</h3>
+                <p>Total Courses: <span id="total-courses">15</span></p>
+                <p>Best Round Score: <span id="best-round-score">72</span></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        // JavaScript function to go back to the main page
+        document.getElementById('backButton').addEventListener('click', function() {
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>

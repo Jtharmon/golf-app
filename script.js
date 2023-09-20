@@ -1,3 +1,28 @@
+//title page
+// Get references to HTML elements
+const profileButton = document.getElementById('profileButton');
+const startRoundButton = document.getElementById('startRoundButton');
+const pastRoundsButton = document.getElementById('pastRoundsButton');
+
+// Event listeners for button clicks
+profileButton.addEventListener('click', () => {
+    // Navigate to the profile page (replace 'profile.html' with the actual file path)
+    window.location.href = 'profile.html';
+});
+
+startRoundButton.addEventListener('click', () => {
+    // Navigate to the start round page (replace 'startRound.html' with the actual file path)
+    window.location.href = 'course-list.html';
+});
+
+pastRoundsButton.addEventListener('click', () => {
+    // Navigate to the past rounds page (replace 'pastRounds.html' with the actual file path)
+    window.location.href = 'pastRounds.html';
+});
+
+
+
+
 // Sample data for golf scores
 const golfScores = [];
 const holePars = [3, 4, 5, 3, 4, 4, 5, 3, 4, 5, 4, 3, 4, 5, 3, 5, 4, 5]; // Example par values for each hole
@@ -58,12 +83,20 @@ function removeScore(index) {
 }
 
 function addData(holeNumber, note, score) {
-    if (confirm('Add this note? ${index}?'))
-        this.holeData[holeNumber] = { note, score };
-}
+    const myObject = {
+        holeData: {},
+        addData: function (holeNumber, note, score) {
+            if (confirm('Add this note?'))
+                this.holeData[holeNumber] = { note, score };
+        }
+    };
+    
+    const addDataBound = myObject.addData.bind(myObject);
+    }
 
 
 // Event listener for the "Add Score" button
+console.log(addEventListener);
 const addScoreButton = document.getElementById("addScore");
 addScoreButton.addEventListener("click", addScore);
 
@@ -105,6 +138,32 @@ class GolfCourse {
         }
     }
 }
+
+// Get references to HTML elements
+const userNotesInput = document.getElementById('userNotes');
+const addDataButton = document.getElementById('addData');
+const noteList = document.getElementById('scoreboard');
+
+// Event listener for "Add Notes" button
+addDataButton.addEventListener('click', function () {
+    // Get the user's input from the textarea
+    const userNotes = userNotesInput.value.trim();
+
+    // Check if the input is not empty
+    if (userNotes !== '') {
+        // Create a new list item (li) to display the user's notes
+        const listItem = document.createElement('li');
+        listItem.textContent = userNotes;
+
+        // Add the new note to the list
+        noteList.appendChild(listItem);
+
+        // Clear the textarea
+        userNotesInput.value = '';
+    }
+});
+
+
 
 // Example usage:
 const course = new GolfCourse();

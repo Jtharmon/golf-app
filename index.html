@@ -3,17 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Disc Golf Score Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Title Page</title>
 </head>
 <body>
-    <h1>Disc Golf Score Tracker</h1>
-    <div id="scoreboard">
-        <!-- Scorecard will be displayed here -->
+    <div class="background">
+        <h1>Welcome to the Golf Score Tracker</h1>
+        <div class="button-container">
+            <button id="profileButton">Profile</button>
+            <button id="startRoundButton">Start a Round</button>
+            
+            <!-- Update the "Past Rounds" button to link to pastRounds.html -->
+            <a href="past-rounds.html">
+                <button id="pastRoundsButton">Past Rounds</button>
+            </a>
+        </div>
     </div>
-    <button id="addScore">Add Score</button>
     <script src="script.js"></script>
-    <button id="addData">Add Notes</button>
-    <script>src="script.js"</script>
 </body>
 </html>

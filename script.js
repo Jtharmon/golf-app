@@ -3,6 +3,12 @@
 const profileButton = document.getElementById('profileButton');
 const startRoundButton = document.getElementById('startRoundButton');
 const pastRoundsButton = document.getElementById('pastRoundsButton');
+const addScoreButton = document.getElementById("addScore");
+const userNotesInput = document.getElementById('userNotes');
+const addDataButton = document.getElementById('addData');
+const noteList = document.getElementById('scoreboard');
+
+
 
 // Event listeners for button clicks
 profileButton.addEventListener('click', () => {
@@ -97,7 +103,6 @@ function addData(holeNumber, note, score) {
 
 // Event listener for the "Add Score" button
 console.log(addEventListener);
-const addScoreButton = document.getElementById("addScore");
 addScoreButton.addEventListener("click", addScore);
 
 // Initial display of the scorecard
@@ -140,9 +145,6 @@ class GolfCourse {
 }
 
 // Get references to HTML elements
-const userNotesInput = document.getElementById('userNotes');
-const addDataButton = document.getElementById('addData');
-const noteList = document.getElementById('scoreboard');
 
 // Event listener for "Add Notes" button
 addDataButton.addEventListener('click', function () {

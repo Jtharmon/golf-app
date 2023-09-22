@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Golf Players</title>
+</head>
+<body>
+    <div class="background">
+        <div class="header">
+            <button id="backButton" onclick="goBack()">Back</button>
+        </div>
+        <h1>List of Golf Players</h1>
+        <form id="playerChecklist">
+            <ul>
+                <li><label><input type="checkbox" name="players" value="Tiger Woods"> Tiger Woods</label></li>
+                <li><label><input type="checkbox" name="players" value="Rory McIlroy"> Rory McIlroy</label></li>
+                <li><label><input type="checkbox" name="players" value="Brooks Koepka"> Brooks Koepka</label></li>
+                <li><label><input type="checkbox" name="players" value="Dustin Johnson"> Dustin Johnson</label></li>
+                <li><label><input type="checkbox" name="players" value="Justin Thomas"> Justin Thomas</label></li>
+                <!-- Add more golf players as needed -->
+            </ul>
+        </form>
+        
+        <button id="startButton" onclick="startRound()">Start</button>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        function goBack() {
+            window.location.href = 'index.html';
+        }
+
+        function startRound() {
+            const selectedPlayers = getSelectedPlayers();
+            
+            if (selectedPlayers.length > 0) {
+                // Redirect to the scorecard.html page with selected players as a query parameter
+                const queryString = selectedPlayers.map(player => `players=${encodeURIComponent(player)}`).join('&');
+                window.location.href = `scorecard.html?${queryString}`;
+            } else {
+                alert("Please select at least one player to start the round.");
+            }
+        }
+
+        function getSelectedPlayers() {
+            const playerChecklist = document.forms["playerChecklist"];
+            const selectedPlayers = [];
+            
+            for (let i = 0; i < playerChecklist.players.length; i++) {
+                if (playerChecklist.players[i].checked) {
+                    selectedPlayers.push(playerChecklist.players[i].value);
+                }
+            }
+            
+            return selectedPlayers;
+        }
+    </script>
+</body>
+</html>

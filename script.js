@@ -11,9 +11,12 @@ const noteList = document.getElementById('scoreboard');
 
 
 // Event listeners for button clicks
-profileButton.addEventListener('click', () => {
-    // Navigate to the profile page (replace 'profile.html' with the actual file path)
-    window.location.href = 'profile.html';
+document.addEventListener('DOMContentLoaded', function () {
+    // Your code here, including adding event listeners
+    profileButton.addEventListener('click', () => {
+        // Navigate to the profile page (replace 'profile.html' with the actual file path)
+        window.location.href = 'profile.html';
+    });
 });
 
 startRoundButton.addEventListener('click', () => {
@@ -102,7 +105,6 @@ function addData(holeNumber, note, score) {
 
 
 // Event listener for the "Add Score" button
-console.log(addEventListener);
 addScoreButton.addEventListener("click", addScore);
 
 // Initial display of the scorecard

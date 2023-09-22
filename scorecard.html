@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Golf Scorecard</title>
+</head>
+<body>
+    <div class="background">
+        <h1>Golf Scorecard</h1>
+        <div id="scorecard">
+            <!-- Hole 1 -->
+            <div class="hole">
+                <h2>Hole 1</h2>
+                <p>Par: 4</p>
+                <p>Yardage: 400 yards</p>
+                <p>Score: <span id="score-0">--</span></p>
+                <button onclick="addScore(0)">Add Score</button>
+                <button onclick="editScore(0)">Edit Score</button>
+                <button onclick="removeScore(0)">Remove Score</button>
+            </div>
+
+            <!-- Hole 2 -->
+            <div class="hole">
+                <h2>Hole 2</h2>
+                <p>Par: 3</p>
+                <p>Yardage: 180 yards</p>
+                <p>Score: <span id="score-1">--</span></p>
+                <button onclick="addScore(1)">Add Score</button>
+                <button onclick="editScore(1)">Edit Score</button>
+                <button onclick="removeScore(1)">Remove Score</button>
+            </div>
+
+            <!-- Add more holes as needed -->
+        </div>
+        <button onclick="endRound()">End Round</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

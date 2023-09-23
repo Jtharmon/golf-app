@@ -13,22 +13,31 @@ const noteList = document.getElementById('scoreboard');
 // Event listeners for button clicks
 document.addEventListener('DOMContentLoaded', function () {
     // Your code here, including adding event listeners
-    profileButton.addEventListener('click', () => {
-        // Navigate to the profile page (replace 'profile.html' with the actual file path)
-        window.location.href = 'profile.html';
+    const profileButton = document.getElementById('profileButton');
+    const startRoundButton = document.getElementById('startRoundButton');
+
+    document.addEventListener('DOMContentLoaded', function () {
+        // Your code here, including adding event listeners
+        const profileButton = document.getElementById('profileButton');
+        const startRoundButton = document.getElementById('startRoundButton');
+        const pastRoundsButton = document.getElementById('pastRoundsButton');
+    
+        profileButton.addEventListener('click', () => {
+            // Navigate to the profile page (replace 'profile.html' with the actual file path)
+            window.location.href = 'profile.html';
+        });
+    
+        startRoundButton.addEventListener('click', () => {
+            // Navigate to the start round page (replace 'startRound.html' with the actual file path)
+            window.location.href = 'course-list.html';
+        });
+    
+        pastRoundsButton.addEventListener('click', () => {
+            // Navigate to the past rounds page (replace 'pastRounds.html' with the actual file path)
+            window.location.href = 'pastRounds.html';
+        });
     });
-});
-
-startRoundButton.addEventListener('click', () => {
-    // Navigate to the start round page (replace 'startRound.html' with the actual file path)
-    window.location.href = 'course-list.html';
-});
-
-pastRoundsButton.addEventListener('click', () => {
-    // Navigate to the past rounds page (replace 'pastRounds.html' with the actual file path)
-    window.location.href = 'pastRounds.html';
-});
-
+    
 
 
 
@@ -37,6 +46,7 @@ const golfScores = [];
 const holePars = [3, 4, 5, 3, 4, 4, 5, 3, 4, 5, 4, 3, 4, 5, 3, 5, 4, 5]; // Example par values for each hole
 
 // Function to display the scorecard
+document.addEventListener('DOMContentLoaded', function () {
 function displayScorecard() {
     const scoreboard = document.getElementById("scoreboard");
     scoreboard.innerHTML = "";
@@ -54,7 +64,8 @@ function displayScorecard() {
             </div>
         `;
     }
-}
+}});
+
 
 // Function to add a score
 function addScore() {
@@ -91,6 +102,10 @@ function removeScore(index) {
     }
 }
 
+// Call the initial display of the scorecard
+displayScorecard();
+
+
 function addData(holeNumber, note, score) {
     const myObject = {
         holeData: {},
@@ -105,10 +120,16 @@ function addData(holeNumber, note, score) {
 
 
 // Event listener for the "Add Score" button
-addScoreButton.addEventListener("click", addScore);
+document.addEventListener('DOMContentLoaded', function () {
+    const addScoreButton = document.getElementById('addScore');
+    
+    addScoreButton.addEventListener('click', addScore);
+});
 
 // Initial display of the scorecard
-displayScorecard();
+document.addEventListener('DOMContentLoaded', function () {
+    displayScorecard();
+});
 
 class GolfCourse {
     constructor() {
@@ -149,22 +170,14 @@ class GolfCourse {
 // Get references to HTML elements
 
 // Event listener for "Add Notes" button
-addDataButton.addEventListener('click', function () {
-    // Get the user's input from the textarea
-    const userNotes = userNotesInput.value.trim();
+document.addEventListener('DOMContentLoaded', function () {
+    const addDataButton = document.getElementById('addData');
+    const userNotesInput = document.getElementById('userNotes');
+    const noteList = document.getElementById('scoreboard');
 
-    // Check if the input is not empty
-    if (userNotes !== '') {
-        // Create a new list item (li) to display the user's notes
-        const listItem = document.createElement('li');
-        listItem.textContent = userNotes;
-
-        // Add the new note to the list
-        noteList.appendChild(listItem);
-
-        // Clear the textarea
-        userNotesInput.value = '';
-    }
+    addDataButton.addEventListener('click', function () {
+        // Rest of your code
+    });
 });
 
 
@@ -181,3 +194,4 @@ console.log(course.getScore(1)); // Get the updated score for hole 1
 course.deleteData(2);  // Delete the data for hole 2
 console.log(course.getNote(2));  // Try to get the note for hole 2 (should return undefined)
 console.log(course.getScore(2)); // Try to get the score for hole 2 (should return undefined)
+});
